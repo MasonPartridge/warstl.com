@@ -8,3 +8,9 @@ export interface UnitCategory {
     id: number;
     units: Unit[];
 }
+
+export interface GameSystem {
+    name: string;
+    id: number;
+    categories: UnitCategory[];
+}
