@@ -12,28 +12,28 @@ datasource db {
 }
 
 model Unit {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   deletedAt DateTime?
-  unitCategoryId Int
+  unitCategoryId String
   category UnitCategory @relation(fields: [unitCategoryId], references: [id])
 }
 
 model UnitCategory {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   deletedAt DateTime?
   units Unit[]
-  gameSystemId Int
+  gameSystemId String
   gameSystem GameSystem @relation(fields: [gameSystemId], references: [id])
 }
 
 model GameSystem {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
